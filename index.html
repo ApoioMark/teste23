@@ -1,0 +1,674 @@
+<a class="btn product-add free-test alt" onclick="showTestFreeModal(true)">Baixar Versão Demonstrativa</a>
+
+<div class="full-modal-wrap" style="display: none;"> 
+  <div class="modal modal1" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="close-modal" onclick="closeTestFreeModal()"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></div>
+      </div>
+      
+      <div class="modal-body">
+        <div class="main-text">
+          <h2 class="title">Baixe <strong>grátis</strong> a versão demonstrativa</h2>
+          <p class="product_title">Planilha de Fluxo de Caixa em Excel 4.0</p>
+        </div>
+        <div class="email-subscribe">
+          <div class="cargo-select-wrapper">
+            	<select id="cargo-select" name="cargo-select">
+       	    		<option value"no="" occupation="" selected"="" disabled="" selected="">Qual a sua situação profissional?</option>
+        			<option value="Tenho meu próprio negócio">Tenho meu próprio negócio</option>
+		        	<option value="Sou consultor(a) de negócios">Sou consultor(a) de negócios</option>
+          			<option value="Sou do meio acadêmico">Sou do meio acadêmico</option>
+          			<option value="Sou funcionário(a) de uma empresa">Sou funcionário(a) de uma empresa</option>
+          			<option value="Estou me recolocando no mercado">Estou me recolocando no mercado</option>
+              </select>
+          </div>
+          <div class="email-subscription-line">
+            <input type="email" placeholder="Insira seu email aqui..." name="trial_form[email]" id="trial_form_email">
+            <a class="btn" onclick="submitFreeModal(false)">Baixar</a>
+          </div>
+          
+          
+          <div class="subscribe__content">
+            <input class="boolean optional" type="checkbox" value="1" checked="checked" name="trial_form[opted_in]" id="trial_form_opted_in">
+            <label class="boolean optional check" for="trial_form_opted_in">
+              Aceito receber e-mails sobre como ganhar tempo na gestão.
+            </label>
+          </div>
+          
+          <div class="error-text"></div>
+        </div>
+		       
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="modal modal2" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="close-modal" onclick="closeTestFreeModal()"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></div>
+      </div>
+      
+      <div class="modal-body">
+        <div class="main-text">
+          <p class="title">Seu download começará em 5 segundos</p>
+          <p class="subheading">A planilha demonstrativa tem os mesmos recursos, estrutura e conteúdo da planilha completa, no entanto ela é bloqueada com apenas alguns campos livres para teste.</p>
+        </div>
+		    
+        <div class="email-subscribe">
+          <p>Uma cópia também foi enviada ao seu e-mail para você acessá-la quando quiser!
+        </p></div>
+
+      </div>
+      
+    </div>
+    
+  </div>
+  
+  <div class="modal modal3" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="close-modal" onclick="closeTestFreeModal()"><svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></div>
+      </div>
+      
+      <div class="modal-body">
+        <div class="main-text">
+          <p class="title">Planilha de Fluxo de Caixa em Excel 4.0</p>
+          <p class="subheading desktop">A planilha demonstrativa tem os mesmos recursos, estrutura e conteúdo da planilha completa, no entanto ela é bloqueada com apenas alguns campos livres para teste.</p>
+          <p class="subheading mobile">A planilha demonstrativa tem os mesmos recursos, estrutura e conteúdo da planilha completa, no entanto ela é bloqueada com apenas alguns campos livres para teste.</p>
+          <a class="btn" onclick="closeTestFreeModal()" style="margin-bottom: 20px;">Fechar</a>
+        </div>
+		    
+        <div class="email-subscribe">
+          <p>Uma cópia também foi enviada ao seu e-mail para você acessá-la quando quiser!
+        </p></div>
+
+      </div>
+      
+    </div>
+    
+  </div>
+  
+</div>
+<style>
+  a.free-test {
+    width: 100%;
+    margin: 10px 0px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  p.subheading.mobile {
+      display: none;
+    }
+  
+  .full-modal-wrap {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.5);
+    top: 0;
+    left: 0;
+    z-index: 10000000;
+  }
+  
+  div.modal {
+    display: none;
+    width: 700px;
+    max-width: 90%;
+    margin: 100px auto;
+    background: #FFF;
+    border-radius: 5px;
+  }
+  
+  div.modal.modal1 {
+    color: #212529;
+    width: 90%;
+  	max-width: 700px;
+    font-size: 1rem;
+  }
+  
+  div.modal.modal1 .okeReviews {
+    padding: 0 0 5px;
+  }
+  
+  div.modal.modal1 .modal-body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  	padding: 0rem 3rem 0.5rem;
+  }
+  div.modal.modal1 .modal-body .email-subscribe .email-subscription-line, div.modal.modal1 .modal-body .main-text .subheading {
+    padding: 0;
+  }
+  
+  div.modal.modal1 .modal-body .main-text .subheading {
+  	border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  
+  div.modal.modal1 .modal-body .main-text .title, div.modal.modal1 h1, div.modal.modal1 h6 {
+    color: #212529;
+  }
+  
+  div.modal.modal1 h1 {
+  	font-weight: 600;
+    font-size: 1.9rem;
+    margin-bottom: .4rem;
+  }
+  
+  div.modal.modal1 .excel-selector {
+  	padding-top: 5px;
+  }
+  
+  div.modal.modal1 .modal-body .main-text .title {
+  	font-weight: 500;
+    margin-bottom: 0.2em;
+  }
+  
+  div.modal.modal1 .modal-body .main-text .product_title {
+    font-weight: 500;
+  }
+  
+  div.modal.modal1 .email-subscribe {
+  	background: #fff;
+    border-top: 1px solid #ddd;
+  }
+  
+  div.modal.modal1 .email-subscribe .check {
+    margin-left: 10px;
+  }
+  
+  div.modal.modal1 a.btn {
+    background: #007bff;
+    border-color: #007bff;
+    border-radius: 0.3rem;
+    box-shadow: none;
+    height: 48px;
+    line-height: 32px;
+    padding: .5rem 1rem;
+  }
+  
+  div.modal.modal1 p {
+    font-weight: 400;
+    line-height: 1.5;
+  }
+  
+  div.modal.modal1 #trial_form_email {
+    height: 48px;
+    border: 1px solid #ced4da !important;
+    padding: .5rem 1rem;
+    border: .3rem;
+    margin-bottom: 0.3rem;
+    width: 100%;
+  }
+  
+  div.modal.modal1 label {
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  div.modal.modal1 .subscribe__content {
+  	display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  #totalStars {
+  	padding: 0 0 1px;
+  }
+  
+  div.modal a {
+   cursor: pointer; 
+  }
+  
+  div.close-modal {
+    text-align: right;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  div.close-modal svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  
+  div.modal .modal-body {
+	text-align: center; 
+  }
+  
+  .modal-body .main-text .title {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.2em;
+    font-size: 2em;
+    color: #4d7099;
+    margin: 0 0 0.7em;
+    padding: 0px 40px;
+  }
+  
+  .modal-body .main-text .subheading {
+  	padding: 0px 40px;
+  }
+  
+  .excel-selector {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+  
+  .excel-selector p {
+    font-weight: bold;
+  }
+  
+  .excel-selector .radio.inline {
+    display: inline-block;
+    padding: 0px 10px 20px; 
+  }
+  
+  .excel-selector--data {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .excel-selector--data div {
+    padding: 15px 20px;
+    width: 100%;
+  }
+  
+  .email-subscribe {
+    background: #ddd;
+    padding: 15px 0px 20px;
+    border-radius: 0px 0px 5px 5px;
+  }
+  
+  .email-subscribe .email-subscription-line {
+    display: flex;
+    padding: 0 60px;
+  }
+  
+  .email-subscribe .email-subscription-line input#trial_form_email {
+    /*flex: 6;*/
+    margin-right: 10px;
+  }
+  
+  .email-subscribe .email-subscription-line a.btn {
+	/*flex: 1;*/
+    max-width: 230px;
+    width: 100%;
+  }
+  
+  .email-subscribe .cargo-select-wrapper {
+    width: 100%;
+    margin: auto;
+    background-color: #fff;
+    border: 1px solid #8c8c8f;
+    border-radius: 2px;
+    margin-bottom: 10px;
+  }
+  
+  .email-subscribe .cargo-select-wrapper select#cargo-select {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    height: 38px;
+    font-family: "Open Sans", sans-serif;
+    color: #5c5c5f;
+  }
+  
+  .email-subscribe .check {
+    padding-top: 10px;
+  }
+  
+  .email-subscribe .error-text {
+    display: none;
+    color: red;
+    padding: 0px 20px;
+  }
+  
+  @media screen and (max-width: 768px) {
+   	.modal-body .main-text p.title {
+      padding: 0px 15px;
+      margin-bottom: 10px;
+    }
+    
+    .modal-body .main-text p.subheading.desktop {
+      display: none;
+    }
+    
+    .modal-body .main-text p.subheading.mobile {
+      display: block;
+      padding: 0px 15px;
+      margin-bottom: 10px;
+    }
+    
+    .email-subscribe {
+      padding: 20px;
+    }
+    
+    .email-subscribe .email-subscription-line {
+      width: 100%;
+      display: block;
+      padding: 0px;
+    }
+    
+    .email-subscribe .email-subscription-line a.btn {
+      margin-top: 10px; 
+    }
+    
+    div.modal {
+      margin-top: 30px; 
+    }
+    
+    div.modal3 div.email-subscribe {
+      display: none; 
+    }
+      
+    div.modal.modal1 .email-subscribe {
+      padding: 0;
+    }
+    
+    div.modal.modal1 .modal-body {
+      padding: 0rem 1rem 0.5rem;
+    }
+    
+    div.modal.modal1 .email-subscribe .email-subscription-line a.btn {
+      max-width: 100%;
+    }
+
+    div.modal.modal1 .modal-body .main-text .title {
+      font-size: 1.6em;
+    }
+  }
+  
+</style>
+<script src="https://malsup.github.io/jquery.form.js"></script>
+<script>
+  
+  var errorMessage = "";
+  
+  
+  function showTestFreeModal(eventOrigin) {
+    setTimeout(function () {
+      var totalDownload = $(".zegsu-sold-main .zegsu-sold-count-val").html();
+      //var totalReviews = $(".jdgm-widget .jdgm-prev-badge").data("number-of-reviews");
+      var totalReviews = 75;
+      // var score = $(".jdgm-widget .jdgm-prev-badge").data("average-rating");
+      var score = 4.6;
+      //var totalStars = $(".jdgm-prev-badge .jdgm-prev-badge__stars").html();
+      var reviewOn = true;
+      var totalStars = $(".okeReviews-starRating-indicator").html();
+      
+      if(totalDownload == 0) {
+        $("#totalDownload").html("60.000"); 
+      } else {
+        $("#totalDownload").html(totalDownload); 
+      }
+
+      if(!totalReviews) {
+        $("#totalReviews").html("1000");
+      } else {
+        $("#totalReviews").html(totalReviews);
+      }
+
+	  if(!totalStars) {
+		$("#totalScore").html("Nota: " + "<span>4.8</span>");
+        totalStars = '<span class="okeReviews-starRating-indicator-layer"></span><span class="okeReviews-starRating-indicator-layer okeReviews-starRating-indicator-layer--foreground" style="width: 93%"></span>'
+        $("#totalStars").html(totalStars);
+	  } else {
+        $("#totalScore").html("Nota: " + "<span>" + score + "</span>");
+        $("#totalStars").html(totalStars);
+	  }
+      
+      if(reviewOn) {
+        $(".who-bought--all").hide(); 
+        $(".who-bought").show();
+      } else {
+        $(".who-bought--all").show(); 
+        $(".who-bought").hide();
+      }
+
+      if(sessionStorage.getItem("email") !== null) {
+        $("#trial_form_email").val(sessionStorage.getItem("email"));
+        if(!eventOrigin) {
+          setTimeout(function() {
+            submitFreeModal(true);
+          }, 500);
+        }
+      }
+
+      $('.full-modal-wrap').fadeIn(200, function() {
+        $('body').css("overflow", "hidden");
+        $('.full-modal-wrap .modal2').hide();
+        $('.full-modal-wrap .modal3').hide();
+
+        if(sessionStorage.getItem("email") === null || sessionStorage.getItem("email") !== $('#trial_form_email').val() || eventOrigin) {
+          $('.full-modal-wrap .modal1').slideDown(300);
+        }
+      });
+
+      //mixpanel.track("[Pagina de Produto] Clique para ver Pagina de Demo", {"Origem": "Sidebar", "Elemento": "Botao de Demo azul"});
+      ga('send', 'event', '[Pagina de Produto] Clique para ver Pagina de Demo', 'click', 'download');
+    });
+  }
+  
+  function closeTestFreeModal() {
+    $('body').css("overflow", "scroll");
+    $('.full-modal-wrap .modal').slideUp(300, function() {
+      $('.full-modal-wrap').fadeOut(300);
+    });
+  }
+  
+  function submitFreeModal(eventOrigin) {
+    var downloadTime = 3000;
+    
+    var submit = true;
+    $('.email-subscribe .error-text').fadeOut(200);
+    errorMessage = "";
+    
+    //check that the email field is filled
+    if ( isEmail($('#trial_form_email').val()) == false ) {
+      formError("email");
+      submit = false;
+    }
+
+    //check that the ocupação field is filled
+    if ( $('#cargo-select').val() === null )  {
+      formError("ocupacao");
+      submit = false;
+    }
+    
+    //check that the check box is checked
+    /*if ( document.getElementById("trial_form_opted_in").checked == false ) {
+      formError("checkbox");
+      submit = false;
+    }*/
+   
+    
+    if ( submit == true ) {
+      if(sessionStorage.getItem("email") === null || sessionStorage.getItem("email") !== $('#trial_form_email').val()) {
+        sessionStorage.setItem("email", $('#trial_form_email').val());
+      }
+      
+      //Show Secondary Modal
+      if ( $( window ).width() > 768 ) {
+	      showModal2();
+      } else {
+          showModal3FromMobile();
+      }
+      
+      //fire the GA events
+      ga('send', 'event', '[Pagina de Produto] Clique para ver Demo', 'click', 'download');
+      
+      //mixpanel.track("[Pagina de Produto] Clique para ver Demo", {"Origem": "Pagina de Demo", "Version": $("input[name='trial_file_type']:checked").val()});
+
+      //fire the Adwords event
+      gtag('event', 'conversion', {'send_to': 'AW-1021330707/JHAlCPjU04kBEJOKgecD'})
+      
+      //fire the Adwords remarketing
+      
+  	  gtag('event', 'conversion', {
+       'send_to': 'AW-1021330707/So_VCJbB8MMCEJOKgecD',
+       'aw_remarketing_only': true
+  	  });
+      
+      
+      
+      //fire FB event
+      fbq('track', 'Lead');
+	  
+      //submit the form fields to active campaign only if the marketing option is checked
+      if ( document.getElementById("trial_form_opted_in").checked != false ) {
+      	submitDrip();
+      }
+      
+      //Wait 3 seconds then get download going for the user, then show 3rd modal
+      if ( $( window ).width() > 768 ) {
+      	setTimeout(function(){
+        
+		  downloadFile();
+          showModal3();
+        
+        
+      	}, downloadTime);
+      }
+    
+    }
+  }
+  
+  function formError(reason) {
+    console.log("Form Error - ", reason ); 
+    
+    if ( reason == "email" ) {
+      errorMessage += "Por favor, inclua um endereço de e-mail válido. "  
+    }
+    
+    if ( reason == "ocupacao" ) {
+      errorMessage += "Por favor, selecione sua situação profissional. "  
+    }
+    
+    /*if ( reason == "checkbox" ) {
+      errorMessage += "Por favor, concorde com os e-mails promocionais." 
+    }*/
+    
+    $('.email-subscribe .error-text').html(errorMessage).fadeIn(200);
+    
+  }
+  
+  function downloadFile() {
+    console.log("Downloading File");
+    window.location.href = 'https://cdn.shopify.com/s/files/1/0258/3203/0313/files/Fluxo_de_Caixa_-_Demo.xlsm?v=1614257432'; 
+  }
+  
+  function submitDrip() {
+    console.log("Submitting Lead");
+    
+    //determine if we have adwords data to send
+    $.urlParam = function (name) {
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)')
+                          .exec(window.location.search);
+
+        return (results !== null) ? results[1] || 0 : false;
+    }
+    
+	var fileURL = 'https://cdn.shopify.com/s/files/1/0258/3203/0313/files/Fluxo_de_Caixa_-_Demo.xlsm?v=1614257432'; 
+    
+    
+   _dcq.push(["identify", {
+      email: $('#trial_form_email').val(),
+      ocupacao: $('#cargo-select').val(),
+      tags: ["Prospect","Demo","Planilha de Fluxo de Caixa em Excel 4.0"]
+    }]);
+    _dcq.push(
+      [
+        "track", "Submitted Demo Form",
+        { 
+          productTitle: "Planilha de Fluxo de Caixa em Excel 4.0",
+          productURL: "https://luz.vc/products/planilha-de-fluxo-de-caixa-excel",
+          demoURL: fileURL,
+          campaign: $.urlParam('campaign'),
+          adset: $.urlParam('adgroup'),
+          ad: $.urlParam('ad'),
+        }
+      ]
+    );
+
+    
+  }
+  
+  function isEmail(email) {
+    var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(email);
+  }
+  
+  function showModal2() {
+    $('.full-modal-wrap .modal1').slideUp(300, function() {
+    	$('.full-modal-wrap .modal2').slideDown(300);
+    });
+  }
+  
+  function showModal3() {
+    $('.full-modal-wrap .modal2').slideUp(300, function() {
+    	$('.full-modal-wrap .modal3').slideDown(300);
+    });
+
+  }
+  
+  function showModal3FromMobile() {
+    $('.full-modal-wrap .modal1').slideUp(300, function() {
+    	$('.full-modal-wrap .modal3').slideDown(300);
+    });
+
+  }
+  
+  const getCookie = function(cname) {
+    let decodedCookies = decodeURIComponent(document.cookie).split('; ');
+    let cookie = decodedCookies.filter(cookie => {
+      return cookie.includes(cname);
+    })[0];
+    
+    if (cookie) {
+      return cookie.substr(cookie.indexOf("=") + 1);
+    }
+    else {
+      return "";
+    }
+  }
+  
+  const setCookie = function(cname, cvalue, cexpires) {
+    document.cookie = `${cname}=${cvalue};expires=${cexpires};path=/`;
+  }
+  
+  const displayProductModal = function (eventOrigin, callback) {
+    let cookieName = "modal-shown-planilha-de-fluxo-de-caixa-excel";
+
+    if (getCookie(cookieName) !== "true") {
+      let cookieExpires = new Date(+new Date() + 86400000);
+      setCookie(cookieName, true, cookieExpires);
+      showTestFreeModal(eventOrigin);
+      if (callback) callback();
+    }
+  }
+  
+  document.addEventListener("mouseout", evt => {
+    if(evt.toElement === null && evt.relatedTarget === null) {
+      // set to true so on exit intent, modal 1 with email should show up
+      displayProductModal(true,function() {
+        /*
+        mixpanel.track(
+          "[Pagina de Produto] Clique para ver Pagina de Demo",
+          {"Origem": "Exit Intent", "Elemento": "Exit Intent"}
+        );
+        */
+      });
+    }
+  });
+  
+  $(document).ready(function() {
+    setTimeout(function () {
+      displayProductModal(false, function() {});
+    }, 14000);
+  });
+</script>
